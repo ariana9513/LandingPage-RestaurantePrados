@@ -1,0 +1,126 @@
+/* Estilos del Modal de Detalles de Buffet */
+.detalles-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  opacity: 0; /* Inicialmente invisible */
+  visibility: hidden; /* Oculto para no interferir con eventos de clic */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.detalles-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #faf3d7; /* Fondo del modal, similar al de la sección de reservas */
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  width: 90%;
+  max-width: 600px; /* Ancho máximo del modal */
+  transform: translateY(-20px); /* Efecto de entrada */
+  transition: transform 0.3s ease;
+  display: flex; /* Añadido para flexbox */
+  flex-direction: column; /* Apila los elementos */
+  max-height: 65vh; /* Limita la altura máxima del modal al 90% del viewport height */
+}
+
+.detalles-modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: #555;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+  color: #333;
+}
+
+.modal-title {
+  font-size: 2rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modal-details-content {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: left;
+  flex-grow: 1; /* Permite que el contenido ocupe el espacio disponible */
+  overflow-y: auto; /* Habilita el scroll vertical si el contenido excede la altura */
+  padding-right: 15px; /* Espacio para la barra de scroll */
+}
+
+.modal-details-content h4 {
+  font-size: 1.3rem;
+  color: #d69c4f;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.modal-details-content ul {
+  list-style: disc; /* Viñetas */
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-details-content ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* Responsive para el modal */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .modal-close-button {
+    font-size: 1.8rem;
+    top: 0.8rem;
+    right: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal-details-content {
+    font-size: 1rem;
+  }
+
+  .modal-details-content h4 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .modal-details-content ul {
+    margin-left: 1rem;
+  }
+}

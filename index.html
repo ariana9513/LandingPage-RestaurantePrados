@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page - Curso IHC y TM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reservas.css" />
+    <link rel="stylesheet" href="modal-buffet-detalles.css" />
+    <!-- CODIGO DE GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- MENÚ SUPERIOR -->
+    <nav class="top-header">
+      <a href="#" class="logo">
+        <img src="images/logo-img.png" alt="Logo" />
+      </a>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        &#9776;
+        <!-- Ícono de hamburguesa -->
+      </button>
+
+      <!-- MENÚ DE NAVEGACIÓN -->
+      <ul class="menu-horizontal">
+        <li><a href="#inicio">INICIO</a></li>
+        <li><a href="#buffets-desayuno">BUFFETS DESAYUNO</a></li>
+        <li>
+          <a href="#">RESTAURANTES</a>
+          <ul class="menu-vertical">
+            <li><a href="#">SURCO</a></li>
+            <li><a href="#">SAN JUAN DE MIRAFLORES</a></li>
+            <li><a href="#">CHORRILLOS</a></li>
+            <li><a href="#">SAN ISIDRO</a></li>
+          </ul>
+        </li>
+        <li><a href="#registrar-reservas">RESERVAS</a></li>
+        <li><a href="#">EVENTOS</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECCIÓN INICIO -->
+    <section class="inicio">
+      <div class="inicio-banner" id="inicio">
+        <h3>Disfruta de un delicioso</h3>
+        <h2>DESAYUNO BUFFET</h2>
+      </div>
+      <div class="inicio-contenido-inferior">
+        <div class="columna-inferior">
+          <p>
+            Empieza bien la mañana con un delicioso desayuno buffet en nuestros
+            restaurantes junto a tu persona favorita.
+          </p>
+        </div>
+        <div class="columna-inferior">
+          <div class="contenido-flecha">&gt;</div>
+        </div>
+        <div class="columna-inferior">
+          <ul>
+            <li>Estación de panes</li>
+            <li>Mesa de Jamones y quesos</li>
+            <li>Opciones dulces como panqueques y hotcakes, entre otros</li>
+            <li>Estación de jugos y bebidas calientes ilimitadas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN BUFFETS DESAYUNO -->
+    <section class="buffets-desayuno" id="buffets-desayuno">
+      <h2>Buffets Desayuno</h2>
+      <div class="buffet-cards-container">
+        <!-- Tarjeta de Buffet 1 -->
+        <div class="buffet-card">
+          <div class="buffet-image">
+            <img src="images/buffet-desayuno1-img.jpg" alt="Desayuno buffet" />
+          </div>
+          <div class="buffet-details">
+            <h3>El Amanecer Criollo</h3>
+            <p>
+              Este buffet se enfoca en los sabores tradicionales y contundentes
+              de la gastronomía peruana, ideal para empezar el día con energía.
+            </p>
+            <ul>
+              <li>Lunes a Viernes de 06:00 a 10:00 am</li>
+              <li>Sábados y domingos de 6:00 a 10:00 am</li>
+            </ul>
+            <div class="buffet-price">S/34</div>
+            <button class="detalles-button" data-buffet-id="amanecer-criollo">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjeta de Buffet 2 -->
+        <div class="buffet-card">
+          <div class="buffet-image">
+            <img src="images/buffet-desayuno2-img.jpg" alt="Desayuno buffet" />
+          </div>
+          <div class="buffet-details">
+            <h3>Despertar Continental</h3>
+            <p>
+              Una opción más ligera pero completa, con toques internacionales y
+              opciones saludables, perfecta para quienes buscan variedad y
+              frescura.
+            </p>
+            <ul>
+              <li>Lunes a Viernes de 06:00 a 10:00 am</li>
+              <li>Sábados y domingos de 6:00 a 10:00 am</li>
+            </ul>
+            <div class="buffet-price">S/47</div>
+            <button
+              class="detalles-button"
+              data-buffet-id="despertar-continental"
+            >
+              Ver detalles
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjeta de Buffet 3 -->
+        <div class="buffet-card">
+          <div class="buffet-image">
+            <img src="images/buffet-desayuno3-img.jpg" alt="Desayuno buffet" />
+          </div>
+          <div class="buffet-details">
+            <h3>Brunch Dominical</h3>
+            <p>
+              Una propuesta más elaborada y sofisticada, ideal para los fines de
+              semana, combinando lo mejor del desayuno y el almuerzo ligero con
+              un toque gourmet.
+            </p>
+            <ul>
+              <li>Lunes a Viernes de 06:00 a 10:00 am</li>
+              <li>Sábados y domingos de 6:00 a 10:00 am</li>
+            </ul>
+            <div class="buffet-price">S/30</div>
+            <button class="detalles-button" data-buffet-id="brunch-dominical">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal de Detalles de Buffet -->
+    <div id="detallesModal" class="detalles-modal">
+      <div class="modal-content">
+        <span class="modal-close-button">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-details-content">
+          <!-- Contenido de los detalles se cargará aquí con JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN CARTA -->
+    <section class="carta">
+      <div class="carta-contenido">
+        <div class="carta-menu">
+          <!-- Combo Desayuno -->
+          <div class="menu-item">
+            <h3 class="item-title">“Combo Desayuno”</h3>
+            <p class="item-description">
+              1 Sanguche CHICHARRÓN o BUTIFARRA .................... S/25.50
+            </p>
+            <p class="item-detail">1 JUGO A ELECCIÓN</p>
+            <p class="item-detail">1 CAFÉ O INFUSIÓN</p>
+          </div>
+
+          <!-- El Clásico -->
+          <div class="menu-item">
+            <h3 class="item-title">“El Clásico”</h3>
+            <p class="item-description">
+              1 Sanguche CHICHARRÓN o BUTIFARRA .................... S/34.90
+            </p>
+            <p class="item-detail">2 TAMALES CRIOLLOS</p>
+            <p class="item-detail">½ KILO DE CAMOTE FRITO</p>
+            <p class="item-detail">½ KILO DE CHICHARRÓN DE CERDO</p>
+            <p class="item-detail">SALSA CRIOLLA</p>
+            <p class="item-detail">4 PANES FRANCES</p>
+          </div>
+        </div>
+
+        <!-- Contenedor del Video -->
+        <div class="carta-video">
+          <div class="embed-video">
+            <iframe
+              src="https://www.youtube.com/embed/gi9o7uSCTms"
+              title="Video-Sanguches"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCION REGISTRAR RESERVAS -->
+    <section class="registro-reservas" id="registrar-reservas">
+      <!-- Formulario de Registro -->
+      <div class="registro-formulario">
+        <h2>Registrar Reservas</h2>
+        <form id="reservaForm" name="frmReserva">
+          <div class="form-group">
+            <label for="cantidadPersonas">Elige la cantidad de personas:</label>
+            <input
+              type="number"
+              id="cantidadPersonas"
+              name="cantidadPersonas"
+              min="1"
+              max="8"
+            />
+            <span class="error-message" id="errorCantidadPersonas"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Selecciona una fecha:</label>
+            <!-- Contenedor del calendario -->
+            <div class="calendar-widget">
+              <div class="calendar-header">
+                <span class="calendar-arrow left-arrow" id="prevMonth"
+                  >&lt;</span
+                >
+                <span class="calendar-month-year" id="currentMonthYear"></span>
+                <span class="calendar-arrow right-arrow" id="nextMonth"
+                  >&gt;</span
+                >
+              </div>
+              <div class="calendar-days-grid" id="calendarDaysGrid">
+                <span class="day-label">Lun</span>
+                <span class="day-label">Mar</span>
+                <span class="day-label">Mie</span>
+                <span class="day-label">Jue</span>
+                <span class="day-label">Vie</span>
+                <span class="day-label">Sáb</span>
+                <span class="day-label">Dom</span>
+                <!-- Los días del mes se generarán con JavaScript -->
+              </div>
+            </div>
+            <input
+              type="hidden"
+              id="fechaSeleccionada"
+              name="fechaSeleccionada"
+            />
+            <span class="error-message" id="errorFechaSeleccionada"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="horaReserva">Hora:</label>
+            <input type="time" id="horaReserva" name="horaReserva" />
+            <span class="error-message" id="errorHoraReserva"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="tipoConsumo">Tipo de consumo:</label>
+            <select id="tipoConsumo" name="tipoConsumo">
+              <option value="">Seleccione</option>
+              <option value="a-la-carta">A la Carta</option>
+              <option value="buffet-desayunos">Buffet Desayunos</option>
+              <option value="buffet-criollo">Buffet Criollo</option>
+            </select>
+            <span class="error-message" id="errorTipoConsumo"></span>
+          </div>
+
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="nombreReserva">Nombre</label>
+              <input type="text" id="nombreReserva" name="nombreReserva" />
+              <span class="error-message" id="errorNombreReserva"></span>
+            </div>
+            <div class="form-group">
+              <label for="apellidoReserva">Apellidos</label>
+              <input type="text" id="apellidoReserva" name="apellidoReserva" />
+              <span class="error-message" id="errorApellidoReserva"></span>
+            </div>
+          </div>
+
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="emailReserva">Correo electrónico</label>
+              <input type="email" id="emailReserva" name="emailReserva" />
+              <span class="error-message" id="errorEmailReserva"></span>
+            </div>
+            <div class="form-group">
+              <label for="telefonoReserva">Teléfono</label>
+              <input type="tel" id="telefonoReserva" name="telefonoReserva" />
+              <span class="error-message" id="errorTelefonoReserva"></span>
+            </div>
+          </div>
+          <div class="form-group checkbox-group">
+            <label>
+              <input
+                type="checkbox"
+                id="aceptoTerminos"
+                name="aceptoTerminos"
+              />
+              Acepto los
+              <a
+                href="documentos/TerminosyCondiciones.pdf"
+                class="link-condiciones"
+                >términos, condiciones</a
+              >
+              y
+              <a
+                href="documentos/PoliticadePrivacidad.pdf"
+                class="link-condiciones"
+                >políticas de privacidad</a
+              >.
+            </label>
+            <span class="error-message" id="errorAceptoTerminos"></span>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label>
+              <input
+                type="checkbox"
+                id="aceptoComunicaciones"
+                name="aceptoComunicaciones"
+              />
+              Consiento la recepción de comunicaciones del restaurante por
+              e-mail y/o SMS con fines comerciales.
+            </label>
+          </div>
+
+          <button type="submit" class="reservar-button">Reservar</button>
+        </form>
+      </div>
+
+      <!-- Contenedor de los cuadros de la derecha -->
+      <div class="registro-cuadros-derecha">
+        <!-- Cuadro de Tu Reserva -->
+        <div class="tu-reserva-box">
+          <h3 id="reservaTitulo">Tu Reserva:</h3>
+          <div
+            id="mensajeReserva"
+            class="mensaje-reserva"
+            style="display: none"
+          >
+            <h3>¡Reserva realizada con éxito!</h3>
+            <p>Gracias por tu reserva.</p>
+            <p>Fecha: <span id="reservaFecha"></span></p>
+            <p>Hora: <span id="displayReservaHora"></span></p>
+            <p>Personas: <span id="reservaPersonas"></span></p>
+            <p>Tipo de consumo: <span id="reservaConsumo"></span></p>
+          </div>
+          <p
+            id="countdownMessage"
+            class="countdown-message"
+            style="display: none"
+          >
+            Por su seguridad, en <span id="countdownTimer">03:00</span> minutos
+            refrescaremos el formulario.
+          </p>
+        </div>
+
+        <!-- SECCION CUADRO DE COMENTARIOS -->
+        <div class="registro-comentario-box">
+          <h3>Registra tu comentario:</h3>
+          <textarea
+            id="comentarioReserva"
+            placeholder="Escribe tu comentario aquí..."
+            rows="5"
+          ></textarea>
+          <button
+            type="button"
+            id="enviarComentarioBtn"
+            class="enviar-comentario-button"
+            disabled
+          >
+            Enviar
+          </button>
+          <span
+            class="mensaje-comentario-exito"
+            id="mensajeComentarioExito"
+          ></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCION FOOTER -->
+
+    <section id="footer">
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Logo y nombre de sitio -->
+          <div class="footer-brand">
+            <img src="images/logo-img.png" alt="Logo" class="footer-logo" />
+            <p>PRADOS</p>
+            <small>© 2025 Todos los derechos reservados</small>
+          </div>
+
+          <!-- Enlaces legales -->
+          <div class="footer-links">
+            <h4>Legal</h4>
+            <a href="documentos/PoliticadePrivacidad.pdf"
+              >Política de Privacidad</a
+            >
+            <a href="documentos/TerminosyCondiciones.pdf"
+              >Términos y Condiciones</a
+            >
+            <a href="documentos/ProtecciondeDatos.pdf">Protección de Datos</a>
+          </div>
+
+          <!-- Redes sociales con íconos personalizados -->
+          <div class="footer-social">
+            <h4>Síguenos</h4>
+            <a href="#"
+              ><img
+                src="images/facebook-icon.png"
+                alt="Facebook"
+                class="social-icon"
+            /></a>
+            <a href="#"
+              ><img
+                src="images/twitter-icon.png"
+                alt="Twitter"
+                class="social-icon"
+            /></a>
+            <a href="#"
+              ><img
+                src="images/instagram-icon.png"
+                alt="Instagram"
+                class="social-icon"
+            /></a>
+            <a href="#"
+              ><img
+                src="images/youtube-icon.png"
+                alt="YouTube"
+                class="social-icon"
+            /></a>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <script src="main.js"></script>
+    <script src="registro-reservas.js"></script>
+    <script src="ver-detalles.js"></script>
+  </body>
+</html>

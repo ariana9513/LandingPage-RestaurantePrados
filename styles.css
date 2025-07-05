@@ -1,0 +1,622 @@
+/* RESET BÁSICO */
+body {
+  margin: 0; /* Elimina el margen exterior del navegador */
+  padding: 0.5rem; /* ¡Revertido! Espaciado interno general, como estaba antes */
+  box-sizing: border-box; /* Incluye padding y border en los tamaños */
+  font-family: "Lexend", sans-serif; /* Fuente base legible y moderna */
+}
+
+/* CABECERA Y MENÚ SUPERIOR */
+.top-header {
+  position: fixed; /* Mantiene el menú fijo en la parte superior */
+  background-color: white; /* Fondo blanco para visibilidad */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 100; /* Se asegura de estar por encima de otros elementos */
+  height: 5rem; /* Altura fija del menú (80px aprox.) */
+  display: flex; /* Activa Flexbox para alinear los elementos internos */
+  align-items: center; /* Centrado vertical */
+  justify-content: space-between; /* Separación entre logo y menú */
+  padding: 0 2rem; /* Espacio horizontal interno del menú */
+  box-sizing: border-box;
+}
+
+/* LOGO */
+.logo img {
+  height: 3.5rem; /* Altura del logo */
+  width: auto; /* Mantiene proporción automática */
+}
+
+/* BOTÓN HAMBURGUESA (ESCONDE EN DESKTOP) */
+.menu-toggle {
+  display: none; /* Oculto por defecto */
+  font-size: 2rem; /* Tamaño del ícono hamburguesa */
+  background: none; /* Sin fondo */
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Manito al pasar el mouse */
+  margin-right: 1rem; /* Espacio entre el borde derecho */
+}
+
+/* MENÚ PRINCIPAL HORIZONTAL */
+.menu-horizontal {
+  list-style: none;
+  display: flex; /* Muestra en fila horizontal */
+  margin: 0;
+  padding: 0;
+}
+
+/* ENLACES DEL MENÚ */
+.menu-horizontal li a {
+  display: block; /* Permite aplicar padding y área clickeable completa */
+  padding: 1rem 1.25rem; /* Espaciado vertical y horizontal */
+  color: #d99f22; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.menu-horizontal li a:hover {
+  color: #80642a; /* Cambio de color al pasar el mouse */
+}
+
+/* SUBMENÚ VERTICAL OCULTO POR DEFECTO */
+.menu-vertical {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.904); /* Fondo visible */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 12rem; /* Ancho del submenú */
+}
+
+.menu-horizontal li:hover .menu-vertical {
+  display: block; /* Se muestra al pasar el mouse */
+}
+
+.menu-vertical li a {
+  display: block;
+  color: black;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.menu-vertical li a:hover {
+  background-color: #faf3d7; /* Resalta al pasar el mouse */
+}
+
+/* SECCIÓN INICIO */
+.inicio {
+  background-color: #faf3d7; /* Color de fondo del área inferior */
+  color: #333;
+}
+
+/* Banner superior con imagen de fondo y texto */
+.inicio-banner {
+  background-image: linear-gradient(
+      rgba(164, 164, 164, 0.5),
+      rgba(148, 148, 148, 0.5)
+    ),
+    url("images/inicio-img.jpg");
+  background-size: cover; /* Cubre todo el área */
+  background-position: center; /* Centra la imagen */
+  min-height: 400px; /* Altura mínima de la sección del banner */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center;
+  color: white; /* Color del texto sobre el banner */
+  padding: 2rem;
+  margin-top: 5rem; /* Asegura que no se solape con el header fijo */
+}
+
+.inicio-banner h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.inicio-banner h2 {
+  font-size: 3.5rem;
+  margin-top: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Contenedor de la parte inferior (dividido en 3 columnas) */
+.inicio-contenido-inferior {
+  display: flex;
+  justify-content: center; /* Centra los elementos */
+  align-items: flex-start; /* Alinea los elementos al inicio de la línea (arriba) */
+  gap: 0rem; /* Espacio entre las columnas */
+  padding: 1.5rem 2rem; /* Relleno interno de esta sección */
+  background-color: #faf3d7; /* Fondo del color crema/amarillo claro */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+/* Estilos para cada una de las 3 columnas */
+.columna-inferior {
+  flex: 1; /* Cada columna ocupa una parte igual del espacio */
+  display: flex; /* Para centrar el contenido dentro de cada columna */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centra el contenido horizontalmente dentro de la columna */
+  text-align: left; /* Centra el texto dentro de la columna */
+  padding: 0.8rem; /* Pequeño padding interno para cada columna */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+/* Estilos específicos para el párrafo de texto */
+.columna-inferior p {
+  font-size: 1rem;
+  line-height: 1.4;
+  max-width: 300px; /* Limita el ancho del párrafo para mejor lectura y compactación */
+  margin: 0; /* Asegura que no haya márgenes extra */
+}
+
+/* Estilos para la flecha divisoria */
+.contenido-flecha {
+  font-size: 5.5rem; /* Tamaño de la flecha */
+  color: #d69c4f; /* Color de la flecha */
+  font-weight: 400; /* Fuente más delgada para un aspecto más elegante */
+  line-height: 1; /* Asegura que la flecha no tenga espacio extra */
+}
+
+/* Estilos para la lista */
+.columna-inferior ul {
+  list-style: none; /* Elimina los puntos de lista predeterminados */
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Mantiene la lista alineada a la izquierda dentro de su columna */
+  max-width: 300px; /* Limita el ancho de la lista */
+}
+
+.columna-inferior li {
+  font-size: 1rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.2rem; /* Espacio para la viñeta personalizada */
+  margin-bottom: 0.3rem; /* Espacio entre ítems de la lista */
+}
+
+.columna-inferior li::before {
+  content: "•"; /* Carácter de viñeta personalizada */
+  color: #333; /* Color de la viñeta */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em; /* Ancho de la viñeta */
+  margin-left: -1em; /* Mueve la viñeta hacia la izquierda del padding */
+  position: absolute;
+  left: 0;
+}
+
+/* SECCION BUFFETS DESAYUNO */
+.buffets-desayuno {
+  padding: 1rem 2rem; /* Relleno lateral reducido para acercar los contenedores a los bordes */
+  background-color: #fff;
+  text-align: center;
+}
+
+.buffets-desayuno h2 {
+  font-size: 2.3rem; /* Título de sección más pequeño */
+  color: #333;
+  margin-bottom: 2.5rem; /* Espacio debajo del título */
+  text-align: left;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buffet-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem; /* Espacio entre las tarjetas ligeramente reducido */
+  max-width: 1000px; /* Ancho máximo del contenedor de tarjetas para que abarquen más */
+  margin: 0 auto;
+}
+
+.buffet-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(107, 107, 107, 0.7);
+  overflow: hidden;
+  width: 30%; /* Ancho de cada tarjeta para que ocupe más espacio */
+  min-width: 240px; /* Asegura que no se hagan demasiado pequeños en pantallas medianas */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.buffet-image {
+  width: 100%;
+  height: 160px; /* Altura fija para la imagen, más pequeña */
+  overflow: hidden;
+}
+
+.buffet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.buffet-details {
+  padding: 1.2rem; /* Relleno interno de la tarjeta más pequeño */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.buffet-details h3 {
+  font-size: 1.3rem; /* Título de la tarjeta más pequeño */
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.6rem; /* Margen inferior más pequeño */
+  font-weight: 600;
+}
+
+.buffet-details p {
+  font-size: 1rem; /* Párrafo más pequeño */
+  color: #555;
+  line-height: 1.4; /* Altura de línea más compacta */
+  margin-bottom: 0.8rem; /* Margen inferior más pequeño */
+  flex-grow: 1;
+}
+
+.buffet-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.4rem 0; /* Margen inferior más pequeño */
+}
+
+.buffet-details ul li {
+  font-size: 0.9rem; /* Ítems de lista más pequeños */
+  color: #666;
+  margin-bottom: 0.2rem; /* Espacio entre ítems de lista más pequeño */
+  position: relative;
+  padding-left: 1rem; /* Espacio para la viñeta más pequeño */
+}
+
+.buffet-details ul li::before {
+  content: "•";
+  color: #666;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: left;
+  left: 0;
+}
+
+.buffet-price {
+  font-size: 1.5rem; /* Precio más pequeño */
+  color: #d69c4f;
+  font-weight: 700;
+  text-align: right;
+  margin-bottom: 1.2rem; /* Espacio entre precio y botón más pequeño */
+}
+
+.detalles-button {
+  background-color: #d69c4f;
+  color: white;
+  padding: 0.8rem 1.2rem; /* Relleno del botón más pequeño */
+  border-radius: 9px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  border: none;
+  font-family: "Lexend", sans-serif; /* Aplica la fuente */
+}
+
+.detalles-button:hover {
+  background-color: #aa8425;
+}
+
+/* SECCIÓN CARTA */
+.carta {
+  padding: 4rem 2rem; /* Relleno general de la sección */
+  background-color: #ffffff; /* Fondo blanco */
+  color: #333;
+}
+
+.carta-contenido {
+  display: flex; /* Mantiene el flex para colocar elementos uno al lado del otro */
+  justify-content: center;
+  align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+  gap: 4rem; /* Espacio entre el menú y el video */
+  max-width: 1200px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centra el contenido en la página */
+}
+
+.carta-menu {
+  flex: 1; /* El menú ocupa una parte del espacio */
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem; /* Espacio entre cada item del menú */
+}
+
+.menu-item {
+  margin-bottom: 1.4rem; /* Espacio entre los bloques de menú */
+}
+
+.menu-item .item-title {
+  font-size: 2.2rem; /* Tamaño del título del combo */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.menu-item .item-description {
+  font-size: 1.2rem; /* Tamaño de la descripción principal */
+  margin-bottom: 0.1rem;
+  line-height: 1.2;
+}
+
+.menu-item .item-detail {
+  font-size: 1.1rem; /* Tamaño de los detalles (jugo, café, etc.) */
+  margin-bottom: 0.1rem;
+  line-height: 1.2;
+}
+
+/* VIDEO EMBED */
+.carta-video {
+  flex: 0.5; /* El video ocupa la otra parte del espacio */
+  display: flex;
+  justify-content: center; /* Centra el video horizontalmente */
+  align-items: center; /* Centra el video verticalmente */
+}
+
+.embed-video {
+  width: 100%; /* Asegura que el contenedor del video ocupe el espacio disponible */
+  max-width: 320px; /* Limita el ancho máximo para un video vertical */
+}
+
+.embed-video iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16; /* Mantiene la proporción vertical */
+  border: none;
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* SECCION FOOTER */
+.footer {
+  background-color: #222; /* Fondo oscuro para contraste */
+  color: white;
+  padding: 2rem 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Contenedor flexible para 3 columnas */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Marca o logotipo */
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Enlaces legales */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Redes sociales con íconos */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* RESPONSIVE DESIGN PARA MOBILE */
+/* RESPONSIVE SECCION MENU */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Muestra el botón hamburguesa en pantallas pequeñas */
+  }
+
+  .menu-horizontal {
+    display: none; /* Oculta el menú horizontal por defecto en pantallas pequeñas */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    width: 100%;
+    position: absolute;
+    top: 5rem; /* Debajo de la cabecera */
+    left: 0;
+    background-color: #fffdf7; /* Fondo para el menú desplegable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-horizontal.active {
+    display: flex; /* Muestra el menú cuando tiene la clase 'active' */
+  }
+
+  .menu-horizontal li {
+    text-align: center;
+  }
+
+  .menu-horizontal li a {
+    padding: 1rem;
+  }
+
+  .menu-vertical {
+    position: static; /* Cambia a estático para que fluya dentro del menú desplegado */
+    width: 100%;
+    background-color: #f8f8f8; /* Un color ligeramente diferente para el submenú */
+  }
+}
+
+/* RESPONSIVE SECCION INICIO */
+@media (max-width: 768px) {
+  .inicio-banner {
+    min-height: 300px;
+  }
+  .inicio-banner h3 {
+    font-size: 1.4rem;
+  }
+  .inicio-banner h2 {
+    font-size: 2.5rem;
+  }
+
+  .inicio-contenido-inferior {
+    flex-direction: column; /* Apila los elementos en pantallas medianas */
+    padding: 1.5rem;
+    gap: -1rem; /* Menor espacio entre elementos apilados */
+    align-items: center; /* Centra los contenedores .columna-inferior horizontalmente */
+  }
+
+  .columna-inferior {
+    width: 100%; /* Ocupa todo el ancho al apilar */
+    max-width: 380px; /* Limita el ancho de cada columna apilada */
+    text-align: left; /* Alinea el texto a la izquierda dentro de la columna */
+    align-items: flex-start; /* Alinea los elementos internos al inicio (izquierda) */
+  }
+
+  /* Estilo específico para la columna de la flecha para que su contenido siga centrado */
+  .columna-inferior:nth-child(2) {
+    align-items: center; /* Centra la flecha horizontalmente dentro de su columna */
+    text-align: center; /* Centra el texto (flecha) dentro de su columna */
+  }
+
+  .contenido-flecha {
+    font-size: 3.5rem; /* Más pequeña en pantallas medianas */
+    transform: rotate(90deg); /* Rota la flecha para que apunte hacia abajo */
+    padding-top: 0.5rem; /* Ajuste vertical */
+    padding-bottom: 0.5rem; /* Ajuste vertical */
+  }
+}
+
+/* RESPONSIVE SECCION BUFFETS DESAYUNO */
+@media (max-width: 768px) {
+  .buffets-desayuno {
+    padding: 3rem 1rem; /* Reduce el padding general */
+  }
+  .buffets-desayuno h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .buffet-cards-container {
+    flex-direction: column; /* Apila las tarjetas en una sola columna */
+    gap: 1.5rem;
+    max-width: 90%; /* Ancho para las tarjetas apiladas */
+  }
+  .buffet-card {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 350px; /* Limita el ancho máximo de la tarjeta individual */
+    margin: 0 auto; /* Centra la tarjeta */
+  }
+  .buffet-image {
+    height: 140px; /* Reduce la altura de la imagen */
+  }
+  .buffet-details h3 {
+    font-size: 1.3rem;
+  }
+  .buffet-details p {
+    font-size: 0.9rem;
+  }
+  .buffet-details ul li {
+    font-size: 0.8rem;
+  }
+  .buffet-price {
+    font-size: 1.6rem;
+  }
+  .detalles-button {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* RESPONSIVE SECCION CARTA */
+@media (max-width: 768px) {
+  .carta-contenido {
+    flex-direction: column; /* Apila el menú y el video */
+    align-items: center; /* Centra los elementos apilados */
+    gap: 2rem; /* Espacio entre el menú apilado y el video */
+    max-width: 100%; /* Permite que el contenido ocupe más ancho */
+  }
+
+  .carta-menu {
+    flex: none; /* Elimina la flexibilidad para que ocupe todo el ancho */
+    width: 100%; /* Asegura que el menú ocupe todo el ancho disponible */
+    max-width: 500px; /* Limita el ancho del menú para que no sea demasiado grande en pantallas medianas */
+    padding: 0 1rem; /* Añade un poco de padding horizontal */
+  }
+
+  .menu-item .item-title {
+    font-size: 1.8rem; /* Ajusta el tamaño del título del combo */
+    text-align: center; /* Centra el título en móviles */
+  }
+
+  .menu-item .item-description,
+  .menu-item .item-detail {
+    font-size: 1rem; /* Ajusta el tamaño de la descripción y detalles */
+    text-align: left; /* Centra el texto de la descripción y detalles */
+  }
+
+  .carta-video {
+    flex: none; /* Elimina la flexibilidad */
+    width: 100%; /* El video ocupa todo el ancho disponible */
+    max-width: 600px; /* Limita el ancho máximo del video para evitar que sea demasiado grande */
+  }
+
+  .embed-video {
+    width: 100%; /* Asegura que el contenedor del video ocupe el espacio disponible */
+    max-width: none; /* Elimina la limitación de ancho para videos verticales */
+  }
+
+  .embed-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Cambia a proporción horizontal (video ancho) */
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+}
+
+/* RESPONSIVE SECCION FOOTER */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social img {
+    margin-bottom: 0.5rem;
+  }
+}

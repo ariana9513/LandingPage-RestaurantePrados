@@ -1,0 +1,459 @@
+/* SECCIÓN REGISTRAR RESERVAS */
+.registro-reservas {
+  display: flex;
+  justify-content: center; /* Centra los dos contenedores principales */
+  gap: 2rem; /* Espacio entre el formulario y el contenedor de cuadros de la derecha */
+  background-color: #faf3d7; /* Fondo de la sección */
+  padding: 4rem 2rem; /* Relleno general de la sección */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+/* Contenedor del Formulario */
+.registro-formulario {
+  flex: 1; /* Ocupa una parte del espacio */
+  background-color: #ffffff; /* Fondo blanco del formulario */
+  padding: 2rem; /* Relleno interno del formulario */
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  max-width: 500px; /* Limita el ancho del formulario */
+  min-width: 300px; /* Asegura un ancho mínimo */
+}
+
+.registro-formulario h2 {
+  font-size: 2.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.3rem;
+  color: #333;
+  text-align: left; /* Alinea el título a la izquierda */
+}
+
+.registro-formulario .form-group {
+  margin-bottom: 1rem; /* Espacio entre grupos de formulario */
+}
+
+.registro-formulario label {
+  display: block; /* Cada label en su propia línea */
+  margin-bottom: 0.4rem; /* Espacio entre label y input */
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.registro-formulario input[type="number"],
+.registro-formulario input[type="text"],
+.registro-formulario input[type="time"],
+.registro-formulario input[type="email"],
+.registro-formulario input[type="tel"],
+.registro-formulario select {
+  width: 100%;
+  padding: 0.8rem; /* Relleno de los campos de texto */
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Lexend", sans-serif; /* Aplica la fuente Lexend */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+/* Estilos para campos en línea (Nombre/Apellido, Correo/Teléfono) */
+.form-group-inline {
+  display: flex;
+  gap: 1rem; /* Espacio entre los campos en línea */
+  margin-bottom: 1rem;
+}
+
+.form-group-inline .form-group {
+  flex: 1; /* Cada campo ocupa la mitad del espacio */
+  margin-bottom: 0; /* Elimina el margen inferior extra */
+}
+
+/* Estilos del Calendario */
+.calendar-widget {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  background-color: #f9f9f9;
+  font-family: "Lexend", sans-serif;
+  max-width: 300px; /* Ancho máximo del calendario */
+  margin-left: auto; /* Centra el calendario dentro de su contenedor */
+  margin-right: auto; /* Centra el calendario dentro de su contenedor */
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.calendar-arrow {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #d69c4f;
+  padding: 0 0.5rem;
+}
+
+.calendar-arrow:hover {
+  color: #b8860b;
+}
+
+.calendar-days-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    7,
+    1fr
+  ); /* 7 columnas para los días de la semana */
+  gap: 0.5rem; /* Espacio entre los días */
+  text-align: center;
+}
+
+.day-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #888;
+}
+
+.day {
+  width: 35px; /* Tamaño fijo para el círculo del día */
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50%; /* Forma circular */
+  transition: background-color 0.2s ease, color 0.2s ease;
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+.day:not(.empty):hover {
+  background-color: #c7c7c7;
+}
+
+.day.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+.day.selected {
+  background-color: #d69c4f; /* Color de fondo para días seleccionados */
+  color: white;
+  font-weight: 600;
+}
+
+/* Checkbox y enlaces */
+.checkbox-group label {
+  display: flex; /* Para alinear el checkbox con el texto */
+  align-items: center;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto; /* Permite que el checkbox tenga su tamaño natural */
+  margin-right: 0.5rem;
+}
+
+.link-condiciones {
+  color: #d69c4f; /* Color de enlace */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-condiciones:hover {
+  text-decoration: underline;
+}
+
+/* Botón Reservar */
+.reservar-button {
+  background-color: #d69c4f; /* Color naranja/dorado */
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend", sans-serif;
+}
+
+.reservar-button:hover {
+  background-color: #b8860b;
+}
+
+/* Contenedor de los cuadros de la derecha */
+.registro-cuadros-derecha {
+  flex: 1; /* Ocupa la otra parte del espacio */
+  display: flex; /* Para apilar los cuadros internos */
+  flex-direction: column;
+  gap: 2rem; /* Espacio entre el cuadro de reserva y el de comentario */
+  max-width: 500px; /* Limita el ancho */
+  min-width: 300px; /* Asegura un ancho mínimo */
+}
+
+/* Cuadro de Tu Reserva */
+.tu-reserva-box {
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem; /* Relleno interno */
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinea el contenido al inicio */
+}
+
+.tu-reserva-box h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 1.5rem; /* Espacio debajo del título */
+}
+
+.mensaje-reserva {
+  background-color: #e6ffe6; /* Fondo verde claro para éxito */
+  border: 1px solid #4caf50; /* Borde verde */
+  color: #333;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem; /* Espacio antes del mensaje de cuenta regresiva */
+  width: 100%; /* Ocupa todo el ancho disponible en el contenedor */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.mensaje-reserva h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #2e8b57; /* Verde más oscuro para el título de éxito */
+}
+
+.mensaje-reserva p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.countdown-message {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0; /* Ajustado para el gap */
+}
+
+#countdownTimer {
+  font-weight: bold;
+  color: #d69c4f; /* Color naranja para el contador */
+}
+
+/* Estilos para los mensajes de error del formulario */
+.error-message {
+  color: #f44336; /* Rojo para los errores */
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  display: block; /* Asegura que cada mensaje esté en su propia línea */
+  text-align: left; /* Alinea el texto a la izquierda */
+  font-weight: 500;
+}
+
+/* Cuadro de Comentario */
+.registro-comentario-box {
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem; /* Relleno interno */
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+  box-sizing: border-box;
+  text-align: left; /* Alinea el texto a la izquierda dentro de esta caja */
+  display: flex; /* Para organizar los elementos internos */
+  flex-direction: column; /* Apila los elementos */
+  gap: 1rem; /* Espacio entre el textarea y el botón */
+}
+
+.registro-comentario-box h3 {
+  font-size: 1.5rem; /* Tamaño del título del comentario */
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0; /* Ajustado por el gap */
+}
+
+.registro-comentario-box textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Lexend", sans-serif;
+  box-sizing: border-box;
+  resize: vertical; /* Permite redimensionar verticalmente */
+  min-height: 100px; /* Altura mínima para el textarea */
+}
+
+/* Estilo para el botón de enviar comentario */
+.enviar-comentario-button {
+  background-color: #d69c4f; /* Mismo color naranja/dorado que el botón de reservar */
+  color: white;
+  padding: 0.8rem 1.2rem; /* Un poco más pequeño que el botón de reservar */
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  font-family: "Lexend", sans-serif;
+}
+
+.enviar-comentario-button:hover:not(:disabled) {
+  background-color: #b8860b;
+}
+
+.enviar-comentario-button:disabled {
+  opacity: 0.6; /* Menos opaco cuando está deshabilitado */
+  cursor: not-allowed; /* Cursor de "no permitido" */
+}
+
+/* Mensaje de éxito para el comentario */
+.mensaje-comentario-exito {
+  color: #2e8b57; /* Verde oscuro */
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: none; /* Oculto por defecto */
+  text-align: center;
+}
+
+/* Responsive para la sección de registro */
+@media (max-width: 768px) {
+  .registro-reservas {
+    padding: 1.5rem 0.5rem;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos */
+  }
+
+  .registro-formulario,
+  .registro-cuadros-derecha {
+    width: 100%; /* Asegura que ocupen el 100% del espacio disponible dentro de .registro-reservas */
+    max-width: 340px;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .tu-reserva-box,
+  .registro-comentario-box {
+    background-color: #ffffff; /* Vuelve a aplicar el fondo */
+    border-radius: 1rem; /* Vuelve a aplicar el border-radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Vuelve a aplicar la sombra */
+    padding: 1.5rem; /* Aplica el mismo padding que el formulario, o el que desees para el contenido interno */
+    max-width: 340px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+  }
+
+  .registro-formulario h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .registro-formulario label {
+    font-size: 0.9rem;
+  }
+
+  .registro-formulario input[type="number"],
+  .registro-formulario input[type="text"],
+  .registro-formulario input[type="time"],
+  .registro-formulario input[type="email"],
+  .registro-formulario input[type="tel"],
+  .registro-formulario select {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .form-group-inline {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-group-inline .form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .form-group-inline .form-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .calendar-widget {
+    max-width: 280px;
+    padding: 0.8rem;
+  }
+
+  .calendar-header {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .calendar-arrow {
+    font-size: 1.3rem;
+  }
+
+  .day-label {
+    font-size: 0.85rem;
+  }
+
+  .day {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .checkbox-group label {
+    font-size: 0.85rem;
+  }
+
+  .reservar-button {
+    padding: 0.9rem 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  #reservaTitulo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .mensaje-reserva {
+    padding: 1rem;
+  }
+
+  .mensaje-reserva h3 {
+    font-size: 1.4rem;
+  }
+
+  .mensaje-reserva p {
+    font-size: 0.95rem;
+  }
+
+  .countdown-message {
+    font-size: 0.8rem;
+  }
+
+  .registro-comentario-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .registro-comentario-box textarea {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    min-height: 80px;
+  }
+}
